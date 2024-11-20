@@ -5,17 +5,18 @@ import lombok.Data;
 import java.util.ArrayList;
 import java.util.List;
 @Data
-public class University {
-    private String name;
+public class ZhiYuan {
+    private University university;
     private List<ZhuanYe> zhuanYes;
 
-    public University(String name) {
-        this.name = name;
+    public ZhiYuan(University university) {
+        this.university = university;
         this.zhuanYes = new ArrayList<>();
     }
 
 
-    public void addZhuanye(ZhuanYe zhuanYe) {
+    public void addMajor(ZhuanYe zhuanYe) {
         this.zhuanYes.add(zhuanYe);
     }
+
 }

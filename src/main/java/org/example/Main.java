@@ -6,15 +6,14 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // 创建一个学生
         System.out.print("输入学生名称: ");
         String studentName = scanner.nextLine();
         Student student = new Student(studentName);
 
-        // 添加最多30个大学
+        //30个大学
         for (int i = 0; i < 30; i++) {
             System.out.print("输入大学名称(exit退出): ");
-            String universityName = scanner.nextLine();
+            String universityName = scanner.nextLine();//这里每次都要新建一个不然只记得一个学校
             if (universityName.equalsIgnoreCase("exit")) {
                 break;
             }
@@ -27,16 +26,16 @@ public class Main {
                 if (majorName.equalsIgnoreCase("exit")) {
                     break;
                 }
-                Major major = new Major(majorName);
-                university.addMajor(major);
+                ZhuanYe zhuanYe = new ZhuanYe(majorName);
+                university.addZhuanye(zhuanYe);
             }
 
             // 创建一个志愿并添加到学生
-            Application application = new Application(university);
-            for(Major major : university.getMajors()) {
-                application.addMajor(major);
+            ZhiYuan zhiYuan = new ZhiYuan(university);
+            for(ZhuanYe zhuanYe : university.getZhuanYes()) {
+                zhiYuan.addMajor(zhuanYe);
             }
-            student.addApplication(application);
+            student.addApplication(zhiYuan);
         }
 
         // 打印学生的志愿填报表

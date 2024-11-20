@@ -3,10 +3,10 @@ package org.example;
 import lombok.Data;
 
 @Data
-public class Major {
+public class ZhuanYe {
     private String name;
 
-    public Major(String name) {
+    public ZhuanYe(String name) {
         this.name = name;
     }
 
